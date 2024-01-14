@@ -1,5 +1,6 @@
 package se.tronhage.demo.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -8,17 +9,19 @@ import jakarta.persistence.Table;
 @Table(name="leaderboard_view")
 public class Leaderboard {
     @Id
+    @Column(name = "player_id")
     Long PlayerId;
+    @Column(name="name")
     String playerName;
     double elo;
+
+    public Leaderboard() {
+    }
 
     public Leaderboard(Long playerId, String playerName, double elo) {
         PlayerId = playerId;
         this.playerName = playerName;
         this.elo = elo;
-    }
-
-    public Leaderboard() {
     }
 
     public Long getPlayerId() {
