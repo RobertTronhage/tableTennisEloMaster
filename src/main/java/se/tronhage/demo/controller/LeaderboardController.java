@@ -1,29 +1,27 @@
-package se.tronhage.demo.Controller;
+package se.tronhage.demo.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import se.tronhage.demo.Entity.Player;
-import se.tronhage.demo.Service.PlayerService;
+import se.tronhage.demo.entity.Player;
 
 import java.util.ArrayList;
 
 @RestController
-@RequestMapping("/players") public class PlayerController {
-
-    @Autowired
-    private PlayerService playerService;
+@RequestMapping("/leaderboard") public class LeaderboardController {
 
     ArrayList<Player> allPlayers = new ArrayList<>();
     @GetMapping("/generatedata")
     public String createPlayer(){
-        return "he funk";
+        //how does one generate data?
+        return "data generated";
     }
     @GetMapping("/getplayerdata")
     public ArrayList<Player>getPlayerData(){
         return allPlayers;
     }
+
     @PostMapping("/setplayerdata")
-    public String addPlayer(@RequestBody Player player){
+    public String addUser(@RequestBody Player player){
+
         //Ska man ha nå if-sats här?
         return "new player added";
     }

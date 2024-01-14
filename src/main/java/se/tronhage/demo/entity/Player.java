@@ -1,4 +1,4 @@
-package se.tronhage.demo.Entity;
+package se.tronhage.demo.entity;
 
 import jakarta.persistence.*;
 
@@ -20,6 +20,18 @@ public class Player {
 
     public Player(String name) {
         this.name = name;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public double getElo() {
+        return elo;
     }
 
     //lägga till win loss ratio??

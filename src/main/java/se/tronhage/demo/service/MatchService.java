@@ -1,10 +1,12 @@
-package se.tronhage.demo.Service;
+package se.tronhage.demo.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import se.tronhage.demo.Entity.Match;
-import se.tronhage.demo.Entity.Player;
+import se.tronhage.demo.entity.Match;
+import se.tronhage.demo.entity.Player;
 import se.tronhage.demo.repository.MatchRepo;
+
+import java.util.List;
 
 @Service
 public class MatchService {
@@ -15,4 +17,8 @@ public class MatchService {
         Match match = new Match(player1, player2, winner);
         matchRepo.save(match);
     }
+    public List<Match> getAllMatches(){
+        return matchRepo.findAll();
+    }
+
 }
