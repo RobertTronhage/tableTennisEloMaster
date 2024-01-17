@@ -18,6 +18,13 @@ public class PlayerService {
         System.out.println("added player");
     }
 
+    public void updatePlayerElo(Player player1,Player player2){
+
+        playerRepo.save(player1);
+        playerRepo.save(player2);
+
+    }
+
     public List<Player> getAllPlayers(){
         return playerRepo.findAll();
     }

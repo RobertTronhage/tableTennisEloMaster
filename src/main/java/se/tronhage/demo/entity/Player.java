@@ -34,6 +34,10 @@ public class Player {
         return elo;
     }
 
+    public void setElo(double elo) {
+        this.elo = elo;
+    }
+
     //lägga till win loss ratio??
     //win-streak??
     //achivements??
