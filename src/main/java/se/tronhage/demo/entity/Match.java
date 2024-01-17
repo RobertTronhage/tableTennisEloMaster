@@ -10,15 +10,15 @@ public class Match {
     private Long id;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "player1")  // Update to match the actual column name in the database
+    @JoinColumn(name = "player1")  
     private Player player1;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "player2")  // Update to match the actual column name in the database
+    @JoinColumn(name = "player2")
     private Player player2;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "winning_player")  // Update to match the actual column name in the database
+    @JoinColumn(name = "winning_player")
     private Player winningPlayer;
 
     public Match() {
@@ -46,3 +46,4 @@ public class Match {
         return winningPlayer;
     }
 }
+
