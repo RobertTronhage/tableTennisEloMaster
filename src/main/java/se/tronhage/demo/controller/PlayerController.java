@@ -6,8 +6,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import se.tronhage.demo.entity.Player;
 import se.tronhage.demo.service.PlayerService;
-
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -15,8 +13,6 @@ import java.util.List;
 
     @Autowired
     private PlayerService playerService;
-
-    ArrayList<Player> allPlayers = new ArrayList<>();
 
     @GetMapping("/getallplayers")
     public List<Player> getPlayerData(){

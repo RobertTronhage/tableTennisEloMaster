@@ -24,5 +24,4 @@ public class MatchService {
     public List<Match> getAllMatches(){
         return matchRepo.findAll();
     }
-
 }
