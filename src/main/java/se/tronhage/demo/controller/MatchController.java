@@ -14,7 +14,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping("/matches") public class MatchController {
+@RequestMapping("/matches")
+@CrossOrigin(origins = "http://127.0.0.1:5501")
+public class MatchController {
 
     @Autowired
     private MatchService matchService;

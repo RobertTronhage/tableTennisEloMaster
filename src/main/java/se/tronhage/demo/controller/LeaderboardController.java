@@ -10,7 +10,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping("/leaderboard") public class LeaderboardController {
+@RequestMapping("/leaderboard")
+@CrossOrigin(origins = "http://127.0.0.1:5501")
+public class LeaderboardController {
 
     @Autowired
     LeaderboardRepo leaderboardRepo;
