@@ -15,6 +15,20 @@ public class Player {
     @Column(columnDefinition = "float default 800.0")
     double elo = 800;
 
+    @Column(name = "matches_played", columnDefinition = "int default 0")
+    int matchesPlayed = 0;
+    @Column(name = "wins", columnDefinition = "int default 0")
+    int wins = 0;
+    @Column(name = "losses", columnDefinition = "int default 0")
+    int losses = 0;
+
+    public double getWinLossRatio(){
+        if (losses==0){
+            return wins == 0 ? 0 : wins;
+        }
+        return (double) wins / losses;
+    }
+
     public Player() {
     }
 
