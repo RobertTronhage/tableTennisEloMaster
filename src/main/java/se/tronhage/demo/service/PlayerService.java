@@ -19,7 +19,7 @@ public class PlayerService {
         System.out.println("added player");
     }
 
-    public void updatePlayerElo(Player player1,Player player2){
+    public void updatePlayerAfterMatch(Player player1, Player player2){
         playerRepo.saveAll(List.of(player1, player2));
     }
 

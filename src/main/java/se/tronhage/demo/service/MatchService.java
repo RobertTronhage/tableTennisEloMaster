@@ -3,10 +3,8 @@ package se.tronhage.demo.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import se.tronhage.demo.entity.Match;
-import se.tronhage.demo.entity.MatchDTO;
 import se.tronhage.demo.entity.Player;
 import se.tronhage.demo.repository.MatchRepo;
-import se.tronhage.demo.repository.PlayerRepo;
 import se.tronhage.demo.utilities.Utilities;
 
 import java.util.List;
@@ -37,8 +35,19 @@ public class MatchService {
 
         player1.setElo(newPlayerElo[0]);
         player2.setElo(newPlayerElo[1]);
-        playerService.updatePlayerElo(player1,player2);
 
+        player1.setMatchesPlayed(player1.getMatchesPlayed() + 1);
+        player2.setMatchesPlayed(player2.getMatchesPlayed() + 1);
+
+        if (winner.equals(player1)){
+            player1.setWins(player1.getWins() + 1);
+            player2.setLosses(player2.getLosses() + 1);
+        } else {
+            player2.setWins(player2.getWins() + 1);
+            player1.setLosses(player1.getLosses() + 1);
+        }
+
+        playerService.updatePlayerAfterMatch(player1,player2);
         matchRepo.save(match);
     }
     public List<Match> getAllMatches(){
