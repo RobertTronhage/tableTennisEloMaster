@@ -6,6 +6,7 @@ version 1.0
 Purpose of this file is to take in ELO from PlayerRepo and update the ELO based on result of match.
  */
 
+import com.fasterxml.jackson.annotation.JsonIgnoreType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import se.tronhage.demo.entity.Player;
@@ -35,7 +36,6 @@ public class Utilities {
         }else {
             constant = 15;
         }
-
         return constant;
     }
 
@@ -48,6 +48,10 @@ public class Utilities {
 
         double calcElo1 = player1.getElo() + constantP1 * ((player1.getId().equals(winner.getId()) ? 1 : 0) - oddsOfWinningForPlayer1);
         double calcElo2 = player2.getElo() + constantP2 * ((player2.getId().equals(winner.getId()) ? 1 : 0) - oddsOfWinningForPlayer2);
+
+        System.out.println(calcElo1 + "player1");
+        System.out.println(calcElo2 + "player2");
+        System.out.println(winner.getName());
 
         double newElo1 = Math.round(calcElo1);
         double newElo2 = Math.round(calcElo2);
