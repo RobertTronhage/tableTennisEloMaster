@@ -11,7 +11,7 @@ public class WebConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
-                .allowedOriginPatterns("http://localhost:5174", "http://127.0.0.1:5174")  // Definierar specifika originmönster
+                .allowedOriginPatterns("http://localhost:5173", "http://127.0.0.1:5173")  // Definierar specifika originmönster
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                 .allowedHeaders("*")
                 .allowCredentials(true);  // Tillåter cookies och autentisering
